@@ -1,3 +1,5 @@
 com\testautomation\tests\LoggingPageTests.class
+com\testautomation\helperfunctions\ClickFunctions.class
+com\testautomation\helperfunctions\WaitForLoadingPage.class
 com\testautomation\tests\BaseTest.class
 com\testautomation\tests\HomePageTests.class

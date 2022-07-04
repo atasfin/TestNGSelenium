@@ -5,10 +5,12 @@ import org.testautomation.drivers.SeleniumDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.sql.Driver;
+
 public class BaseTest {
 
     //WebDriver driver = SeleniumDriver.getDriver();
-    WebDriver sharedDriver = SeleniumDriver.getSharedDriver();
+    //WebDriver sharedDriver = SeleniumDriver.getSharedDriver();
     public BaseTest(){
 
     }
@@ -25,7 +27,7 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown(){
-        sharedDriver.quit();
-        //Driver.quitDriver();
+        //SeleniumDriver.quit();
+        SeleniumDriver.quitDriver();
     }
 }

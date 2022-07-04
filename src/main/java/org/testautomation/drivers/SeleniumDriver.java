@@ -51,10 +51,11 @@ public class SeleniumDriver {
     }
 
     public static void quitDriver(){
-        //f(driver!=null)
-        if(sharedDriver!=null){
+        //if(driver!=null)
+        if(Objects.nonNull(getSharedDriver())){
         getSharedDriver().close();
         getSharedDriver().quit();
+        setSharedDriver(null);
         cleanSharedDriver();
         }
     }
