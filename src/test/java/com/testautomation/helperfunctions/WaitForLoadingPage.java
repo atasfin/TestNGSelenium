@@ -11,8 +11,8 @@ public class WaitForLoadingPage {
     public static WebDriver driver;
 
     public void waitForHomePageToLoadGTZShip() {
-        WebDriverWait wait = new WebDriverWait(driver,10);
-        wait.until(ExpectedConditions.presenceOfElementLocated (By.cssSelector(".carrierRateImage")));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".carrierRateImage")));
     }
 
 }

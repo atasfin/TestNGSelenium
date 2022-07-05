@@ -6,8 +6,8 @@ import org.testautomation.drivers.SeleniumDriver;
 
 public class ClickFunctions {
 
-   //static WebDriver newDriver = SeleniumDriver.getDriver();
-   //static WebDriver newSharedDriver = SeleniumDriver.getSharedDriver();
+    //static WebDriver newDriver = SeleniumDriver.getDriver();
+    //static WebDriver newSharedDriver = SeleniumDriver.getSharedDriver();
 
     //JavascriptExecutor jsDriver = (JavascriptExecutor) newDriver;
     //JavascriptExecutor jsSharedDriver = (JavascriptExecutor) newSharedDriver;

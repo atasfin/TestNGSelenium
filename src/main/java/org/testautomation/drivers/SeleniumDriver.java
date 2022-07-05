@@ -3,60 +3,54 @@ package org.testautomation.drivers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testautomation.constants.ProjectConstants;
+import org.testautomation.utils.ReadPropertyFiles;
 
+import java.io.IOException;
 import java.util.Objects;
 
-public class SeleniumDriver {
+public final class SeleniumDriver {
 
-    public static WebDriver driver;
+    public SeleniumDriver() {
 
-    public static ThreadLocal<WebDriver> sharedDriver = new ThreadLocal<>();
+    }
+    //public static WebDriver driver;
 
-    public static WebDriver getDriver(){
-        if(Objects.isNull(driver)) {
+    public static WebDriver getDriver() {
+        WebDriver driver = null;
+        if (Objects.isNull(DriverManager.getSharedDriver())) {
             System.setProperty("webdriver.chrome.driver", ProjectConstants.getChromeDriverPath());
             driver = new ChromeDriver();
         }
         return driver;
     }
 
-    public static WebDriver getSharedDriver(){
-        return sharedDriver.get();
-    }
 
-    public static void setSharedDriver(WebDriver driverRef){
-        sharedDriver.set(driverRef);
-    }
-
-//    public Driver(){
+    //    public Driver(){
 //    }
-    public static void initializeDriver()  {
-        if(Objects.isNull(driver)) {
+    public static void initializeDriver() throws Exception {
+
+        if (Objects.isNull(DriverManager.getSharedDriver())) {
             System.setProperty("webdriver.chrome.driver", ProjectConstants.getChromeDriverPath());
-            driver = new ChromeDriver();
-            setSharedDriver(driver);
-            getSharedDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
-            //getDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
-            //Thread.sleep(10000);
+            WebDriver driver = new ChromeDriver();
+            //driver = new ChromeDriver();
+            DriverManager.setSharedDriver(driver);
+            //DriverManager.getSharedDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
+            DriverManager.getSharedDriver().get(ReadPropertyFiles.getPropertyValues("url"));
         }
     }
 
-    public static void cleanSharedDriver(){
-        sharedDriver.remove();
-    }
-
-    public static void bringWebPage(String URL){
-        driver.get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
+    public static void bringWebPage(String URL) {
+        DriverManager.getSharedDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
         //driver.get("URL");
     }
 
-    public static void quitDriver(){
+    public static void quitDriver() {
         //if(driver!=null)
-        if(Objects.nonNull(getSharedDriver())){
-        getSharedDriver().close();
-        getSharedDriver().quit();
-        setSharedDriver(null);
-        cleanSharedDriver();
+        if (Objects.nonNull(DriverManager.getSharedDriver())) {
+            DriverManager.getSharedDriver().close();
+            DriverManager.getSharedDriver().quit();
+//        setSharedDriver(null);
+            DriverManager.cleanSharedDriver();
         }
     }
 }
