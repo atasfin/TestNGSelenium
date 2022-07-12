@@ -4,7 +4,7 @@
     <test thread-count="2" name="BaseTest" parallel="methods">
         <classes>
             <class name="com.testautomation.tests.BaseTest"/>
-            <class name="com.testautomation.tests.LoggingPageTests"/>
+            <class name="com.testautomation.tests.LoggingPageTestsGTZShip"/>
             <class name="com.testautomation.tests.HomePageTests"/>
         </classes>
     </test> <!-- Test -->

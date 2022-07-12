@@ -12,8 +12,8 @@ public final class HomePageTests extends BaseTest {
     WaitForLoadingPage waiting = new WaitForLoadingPage();
 
     @Test
-    public void navigateToTruckLoad() throws InterruptedException {
-        LoggingPageTests loggingPageTests = new LoggingPageTests();
+    public void navigateToTruckLoad() throws Exception {
+        LoggingPageTestsGTZShip loggingPageTests = new LoggingPageTestsGTZShip();
         loggingPageTests.loggingTest();
         Thread.sleep(10000);
         //clickFunctions.javaScriptClick(".LTLDropDownImage");

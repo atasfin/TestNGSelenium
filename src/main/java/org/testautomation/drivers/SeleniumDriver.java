@@ -35,9 +35,11 @@ public final class SeleniumDriver {
             //driver = new ChromeDriver();
             DriverManager.setSharedDriver(driver);
             //DriverManager.getSharedDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
-            DriverManager.getSharedDriver().get(ReadPropertyFiles.getPropertyValues("url"));
+            DriverManager.getSharedDriver().get(ReadPropertyFiles.getPropertyValueFromMap("url"));
+            DriverManager.getSharedDriver().manage().window().maximize();
         }
     }
+
 
     public static void bringWebPage(String URL) {
         DriverManager.getSharedDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");

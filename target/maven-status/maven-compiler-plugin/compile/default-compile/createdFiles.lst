@@ -1,2 +1,4 @@
 org\testautomation\constants\ProjectConstants.class
+org\testautomation\utils\ReadPropertyFiles.class
 org\testautomation\drivers\SeleniumDriver.class
+org\testautomation\drivers\DriverManager.class

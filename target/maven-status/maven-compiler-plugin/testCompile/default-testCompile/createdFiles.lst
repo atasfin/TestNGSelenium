@@ -1,5 +1,10 @@
+com\testautomation\asserj\Employee.class
 com\testautomation\tests\LoggingPageTests.class
 com\testautomation\helperfunctions\ClickFunctions.class
 com\testautomation\helperfunctions\WaitForLoadingPage.class
+com\testautomation\asserj\AssertJSoftAssertion.class
+com\testautomation\asserj\AssertJDemo.class
+com\testautomation\asserj\AsserCustomClassTest.class
+com\testautomation\asserj\AssertJodaDemo.class
 com\testautomation\tests\BaseTest.class
 com\testautomation\tests\HomePageTests.class
