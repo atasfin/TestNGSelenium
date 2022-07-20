@@ -1,5 +1,6 @@
 package org.testautomation.pages;
 
+import helperfunctions.ClickFunctions;
 import org.openqa.selenium.By;
 import org.testautomation.drivers.DriverManager;
 import org.testautomation.utils.ReadPropertyFiles;
@@ -12,18 +13,20 @@ public class LoginPageAC {
     private final By ACLoginButton = By.cssSelector("[type='submit']");
 
     public void enterUserName() throws Exception {
-        DriverManager.getSharedDriver().findElement(ACLoginUserName).sendKeys(ReadPropertyFiles.getPropertyValueFromMap("accounting_center_user_name"));
+        DriverManager.getSharedDriver().findElement(ACLoginUserName)
+                .sendKeys(ReadPropertyFiles.getPropertyValueFromMap("accounting_center_user_name"));
     }
 
     public void enterPassword() throws Exception {
-        DriverManager.getSharedDriver().findElement(ACLoginPassword).sendKeys(ReadPropertyFiles.getPropertyValueFromMap("accounting_center_password"));
+        DriverManager.getSharedDriver().findElement(ACLoginPassword)
+                .sendKeys(ReadPropertyFiles.getPropertyValueFromMap("accounting_center_password"));
     }
 
     public void clickACRememberMeCheckBox() {
-        DriverManager.getSharedDriver().findElement(ACRememberMeCheckBox).click();
+        ClickFunctions.click(ACRememberMeCheckBox);
     }
 
     public void clickACLoginButton() {
-        DriverManager.getSharedDriver().findElement(ACLoginButton).click();
+        ClickFunctions.click(ACLoginButton);
     }
 }

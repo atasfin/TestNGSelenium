@@ -1,5 +1,6 @@
 package org.testautomation.pages;
 
+import helperfunctions.ClickFunctions;
 import org.openqa.selenium.By;
 import org.testautomation.drivers.DriverManager;
 import org.testautomation.utils.ReadPropertyFiles;
@@ -23,7 +24,7 @@ public class LoginPageGTZShip {
     }
 
     public LoginPageGTZShip clickGTZShipLoginButton() {
-        DriverManager.getSharedDriver().findElement(GTZShipLoginButton).click();
+        ClickFunctions.click(GTZShipLoginButton);
         return this;
     }
 }

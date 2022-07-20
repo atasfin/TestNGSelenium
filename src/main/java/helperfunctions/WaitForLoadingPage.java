@@ -1,4 +1,4 @@
-package com.testautomation.helperfunctions;
+package helperfunctions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
