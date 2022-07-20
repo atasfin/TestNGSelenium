@@ -1,6 +1,6 @@
 package org.testautomation.pages;
 
-import helperfunctions.ClickFunctions;
+import org.testautomation.helperfunctions.ClickFunctions;
 import org.openqa.selenium.By;
 import org.testautomation.drivers.DriverManager;
 import org.testautomation.utils.ReadPropertyFiles;

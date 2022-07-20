@@ -8,9 +8,6 @@ import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 
 public class BaseTest {
-
-    //WebDriver driver = SeleniumDriver.getDriver();
-    //WebDriver sharedDriver = SeleniumDriver.getSharedDriver();
     public BaseTest() {
 
     }
