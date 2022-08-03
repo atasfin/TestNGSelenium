@@ -3,6 +3,7 @@ package org.testautomation.drivers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testautomation.constants.ProjectConstants;
+import org.testautomation.projectenums.PropertiesEnum;
 import org.testautomation.utils.ReadPropertyFiles;
 
 import java.io.IOException;
@@ -35,7 +36,7 @@ public final class SeleniumDriver {
             //driver = new ChromeDriver();
             DriverManager.setSharedDriver(driver);
             //DriverManager.getSharedDriver().get("https://stage2-carrierrate.globaltranz.com/CR2/Account/Login/");
-            DriverManager.getSharedDriver().get(ReadPropertyFiles.getPropertyValueFromMap("url"));
+            DriverManager.getSharedDriver().get(ReadPropertyFiles.getPropertyValueFromMap(PropertiesEnum.GTZSHIP_URL));
             DriverManager.getSharedDriver().manage().window().maximize();
         }
     }

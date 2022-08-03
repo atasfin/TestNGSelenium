@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testautomation.drivers.DriverManager;
+import org.testautomation.factories.ExplicitWaitFactory;
 import org.testautomation.projectenums.SelectorType;
 import org.testautomation.projectenums.WaitStrategy;
 
@@ -24,20 +25,12 @@ public class BasePage {
     }
 
     public void buttonClick(By selector, WaitStrategy waitStrategy) {
-        if (waitStrategy.equals(WaitStrategy.CLICKABLE)) {
-            explicitlyWaitForElementToBeClickable(selector);
-        } else if (waitStrategy.equals(WaitStrategy.PRESENCE)) {
-            explicitlyWaitForElementToBePresent(selector);
-        }
+        ExplicitWaitFactory.performExplicitWait(selector, waitStrategy);
         DriverManager.getSharedDriver().findElement(selector).click();
     }
 
     public void sendText(By selector, String text, WaitStrategy waitStrategy) {
-        if (waitStrategy.equals(WaitStrategy.CLICKABLE)) {
-            explicitlyWaitForElementToBeClickable(selector);
-        } else if (waitStrategy.equals(WaitStrategy.PRESENCE)) {
-            explicitlyWaitForElementToBePresent(selector);
-        }
+        ExplicitWaitFactory.performExplicitWait(selector, waitStrategy);
         DriverManager.getSharedDriver().findElement(selector).sendKeys(text);
     }
 

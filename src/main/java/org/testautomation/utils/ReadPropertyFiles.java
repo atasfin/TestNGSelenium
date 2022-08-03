@@ -1,6 +1,7 @@
 package org.testautomation.utils;
 
 import org.testautomation.constants.ProjectConstants;
+import org.testautomation.projectenums.PropertiesEnum;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,11 +38,11 @@ public final class ReadPropertyFiles {
         }
     }
 
-    public static String getPropertyValueFromMap(String key) throws Exception {
-        if(Objects.isNull(key) || Objects.isNull(configMap.get(key))){
+    public static String getPropertyValueFromMap(PropertiesEnum key) throws Exception {
+        if(Objects.isNull(key) || Objects.isNull(configMap.get(key.name().toLowerCase()))){
             throw new Exception("Property value" + key + "has not found, please check config.properties file");
         }
-        return configMap.get(key);
+        return configMap.get(key.name().toLowerCase());
     }
 
 //    public static String getPropertyValues(String key) throws Exception {

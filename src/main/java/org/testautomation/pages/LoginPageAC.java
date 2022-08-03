@@ -3,6 +3,7 @@ package org.testautomation.pages;
 import org.testautomation.helperfunctions.ClickFunctions;
 import org.openqa.selenium.By;
 import org.testautomation.drivers.DriverManager;
+import org.testautomation.projectenums.PropertiesEnum;
 import org.testautomation.utils.ReadPropertyFiles;
 
 public class LoginPageAC {
@@ -14,12 +15,12 @@ public class LoginPageAC {
 
     public void enterUserName() throws Exception {
         DriverManager.getSharedDriver().findElement(ACLoginUserName)
-                .sendKeys(ReadPropertyFiles.getPropertyValueFromMap("accounting_center_user_name"));
+                .sendKeys(ReadPropertyFiles.getPropertyValueFromMap(PropertiesEnum.ACCOUNTING_CENTER_USER_NAME));
     }
 
     public void enterPassword() throws Exception {
         DriverManager.getSharedDriver().findElement(ACLoginPassword)
-                .sendKeys(ReadPropertyFiles.getPropertyValueFromMap("accounting_center_password"));
+                .sendKeys(ReadPropertyFiles.getPropertyValueFromMap(PropertiesEnum.ACCOUNTING_CENTER_PASSWORD));
     }
 
     public void clickACRememberMeCheckBox() {
